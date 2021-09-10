@@ -45,7 +45,7 @@ f.write("\n")
 #####FIN ACTIVIDAD 1#####
 
 #####INICIO ACTIVIDAD 2#####
-credenciales = subprocess.check_output('source /etc/whitecloud/admin-openrc.sh')
+os.system('source /etc/whitecloud/admin-openrc.sh')
 #####FIN ACTIVIDAD 2#####
 f.write("Credenciales de admin cargadas.\n")
 
