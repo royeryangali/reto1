@@ -22,7 +22,7 @@ for server in conn.compute.servers():
     print(server.name)
     f.write(server.name)
 
-f.write("\n","w")
+f.write("\n")
 # Listamos las imágenes disponibles:
 for image in conn.compute.images():
     print(image.name)
