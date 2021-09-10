@@ -1,10 +1,12 @@
 import argparse
 import os
 import sys
+import subprocess
 import openstack
 from openstack import image
 from openstack.config import loader
 from openstack import connection
+from subprocess import call
 
 ##########################################################INICIALIZACIÓN#########################################
 # Para tener los logs en el archivo "LogsDeOpenStack"
@@ -17,6 +19,8 @@ conn = openstack.connect(cloud="openstack")
 ##Crear un txt para guardar las salidas que nos interesan:
 f = open("OutputRoyer.txt","w")
 ###
+
+#####INICIO ACTIVIDAD 1#####
 # Listamos las instancias que están creadas:
 f.write("Lista de instancias creadas:\n")
 for server in conn.compute.servers():
@@ -38,26 +42,23 @@ for flavor in conn.compute.flavors():
     print(flavor.name)
     f.write(flavor.name + " | ")
 f.write("\n")
+#####FIN ACTIVIDAD 1#####
 
-# Listamos los endpoints:
-f.write("Lista de endpoints: \n")
-for endpoints in conn.identity.role_domain_group_assignments():
-    print(endpoints) 
-    f.write(str(endpoints) + " | ")   
-f.write("\n")
+#####INICIO ACTIVIDAD 2#####
+credenciales_cargadas = subprocess.check_output('source /etc/whitecloud/admin-openrc.sh')
+#####FIN ACTIVIDAD 2#####
+f.write("Credenciales de admin cargadas.\n")
 
-# Listamos los proyectos:
-f.write("Lista de proyectos: \n")
-for project in conn.identity.projects():
-    print(project) 
-    f.write(str(project) + " | ")  
-f.write("\n")
+#####INICIO ACTIVIDAD 3#####
+#####FIN ACTIVIDAD 3#####
 
-# Listamos los usuarios:
-f.write("Lista de usuarios: \n")
-for user in conn.identity.users():
-    print(user)   
-    f.write(str(user) + " | ")
-f.write("\n")
+#####INICIO ACTIVIDAD 4#####
+#####FIN ACTIVIDAD 4#####
+
+#####INICIO ACTIVIDAD 5#####
+#####FIN ACTIVIDAD 5#####
+
+#####INICIO ACTIVIDAD 6#####
+#####FIN ACTIVIDAD 6#####
 
 f.close()
