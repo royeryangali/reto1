@@ -14,10 +14,18 @@ openstack.enable_logging(True, path="LogsDeOpenstack.log", stream=sys.stdout)
 conn = openstack.connect(cloud="openstack")
 ##########################################################FIN INICIALIZACIÓN#########################################
 
-
+##Crear un txt para guardar las salidas que nos interesan:
+f = open("OutputRoyer.txt","w")
+###
 # Listamos las instancias que están creadas:
 for server in conn.compute.servers():
     print(server.name)
+    f.write(server.name)
 
+f.write("\n","w")
+# Listamos las imágenes disponibles:
 for image in conn.compute.images():
     print(image.name)
+    f.write(image.name,"w")
+
+f.close()
