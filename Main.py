@@ -41,7 +41,7 @@ f.write("\n")
 
 # Listamos los endpoints:
 f.write("Lista de endpoints: \n")
-for endpoints in conn.identity.endpoints():
+for endpoints in conn.identity.role_domain_group_assignments():
     print(endpoints) 
     f.write(str(endpoints) + " | ")   
 f.write("\n")
