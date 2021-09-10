@@ -1,4 +1,3 @@
-#Librerías que se usarán
 import argparse
 import os
 import sys
@@ -18,5 +17,7 @@ conn = openstack.connect(cloud="openstack")
 
 # Listamos las instancias que están creadas:
 for server in conn.compute.servers():
-    print(server.to_dict())
+    print(server.name)
 
+for image in conn.compute.images():
+    print(image.name)
