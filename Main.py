@@ -45,7 +45,7 @@ f.write("\n")
 #####FIN ACTIVIDAD 1#####
 
 #####INICIO ACTIVIDAD 2#####
-os.system('sudo source /etc/whitecloud/admin-openrc.sh')
+subprocess.call('sudo source /etc/whitecloud/admin-openrc.sh')
 #####FIN ACTIVIDAD 2#####
 f.write("Credenciales de admin cargadas.\n")
 
