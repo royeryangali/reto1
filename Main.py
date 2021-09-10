@@ -18,33 +18,43 @@ conn = openstack.connect(cloud="openstack")
 f = open("OutputRoyer.txt","w")
 ###
 # Listamos las instancias que están creadas:
-f.write("Lista de instancias creadas:")
+f.write("Lista de instancias creadas:\n")
 for server in conn.compute.servers():
     print(server.name)
     f.write(server.name + " | ")
 
 f.write("\n")
 
-f.write("Lista de imágenes disponibles:")
 # Listamos las imágenes disponibles:
+f.write("Lista de imágenes disponibles:\n")
 for image in conn.compute.images():
     print(image.name)
     f.write(image.name + " | ")
 f.write("\n")
 
-f.write("Lista de flavors disponibles:")
 # Listamos los flavors disponibles:
+f.write("Lista de flavors disponibles:\n")
 for flavor in conn.compute.flavors():
     print(flavor.name)
     f.write(flavor.name + " | ")
 f.write("\n")
 
-f.write("Lista de endpoints:")
 # Listamos los endpoints:
+f.write("Lista de endpoints: \n")
 for endpoints in conn.identity.endpoints():
-    print(endpoints)
-    f.write(endpoints + " | ")
+    print(endpoints)    
 f.write("\n")
 
+# Listamos los proyectos:
+f.write("Lista de proyectos: \n")
+for project in conn.identity.projects():
+    print(project)   
+f.write("\n")
+
+# Listamos los usuarios:
+f.write("Lista de usuarios: \n")
+for user in conn.identity.users():
+    print(user)   
+f.write("\n")
 
 f.close()
