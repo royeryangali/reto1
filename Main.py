@@ -20,6 +20,16 @@ conn = openstack.connect(cloud="openstack")
 f = open("OutputRoyer.txt","w")
 ###
 
+print("ACTIVIDADES LABORATORIO WHITESTACK")
+print("1.\n")
+print("2.\n")
+print("3.\n")
+print("4.\n")
+print("5.\n")
+print("6.\n")
+
+actividad = int(input("Seleccione el número de actividad a elegir: "))
+
 #####INICIO ACTIVIDAD 1#####
 # Listamos las instancias que están creadas:
 f.write("Lista de instancias creadas:\n")
