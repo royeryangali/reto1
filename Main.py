@@ -20,12 +20,12 @@ f = open("OutputRoyer.txt","w")
 # Listamos las instancias que están creadas:
 for server in conn.compute.servers():
     print(server.name)
-    f.write(server.name,"w")
+    f.write(server.name)
 
 f.write("\n","w")
 # Listamos las imágenes disponibles:
 for image in conn.compute.images():
     print(image.name)
-    f.write(image.name,"w")
+    f.write(image.name)
 
 f.close()
