@@ -42,19 +42,22 @@ f.write("\n")
 # Listamos los endpoints:
 f.write("Lista de endpoints: \n")
 for endpoints in conn.identity.endpoints():
-    print(endpoints.name)    
+    print(endpoints) 
+    f.write(endpoints + " | ")   
 f.write("\n")
 
 # Listamos los proyectos:
 f.write("Lista de proyectos: \n")
 for project in conn.identity.projects():
-    print(project.name)   
+    print(project) 
+    f.write(project + " | ")  
 f.write("\n")
 
 # Listamos los usuarios:
 f.write("Lista de usuarios: \n")
 for user in conn.identity.users():
-    print(user.name)   
+    print(user)   
+    f.write(user + " | ")
 f.write("\n")
 
 f.close()
