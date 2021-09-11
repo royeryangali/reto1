@@ -7,7 +7,7 @@ from openstack import image
 from openstack.config import loader
 from openstack import connection
 from subprocess import call
-import get_token 
+from get_token import obtener_Token 
 
 ##########################################################INICIALIZACIÓN#########################################
 # Para tener los logs en el archivo "LogsDeOpenStack"
@@ -33,7 +33,7 @@ def menu():
 
 
 while True:
-    tokenHallado = get_token()
+    tokenHallado = obtener_Token()
     menu()
     actividad = input("Seleccione el número de actividad a elegir: ")
 
