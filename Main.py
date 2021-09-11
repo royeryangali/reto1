@@ -100,6 +100,13 @@ while True:
         #crear red privada net-1
         #crear red privada net-2
         #listas redes creadas y subredes
+        res= requests.get("http://192.168.0.80:9696/v2.0/networks", ###puerto 9696 es del servicio Network
+                     headers={'content-type': 'application/json',
+                             'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg'
+                             },
+                  )
+
+        print(res.text)
         #####FIN ACTIVIDAD 3#####
         break
     elif actividad=="4":
