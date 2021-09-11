@@ -19,7 +19,7 @@ payload = {
         "scope": {
             "project": {
                 "domain": {
-                    "id": "Default"
+                    "id": "default"
                 },
                 "name": "admin"
             }
