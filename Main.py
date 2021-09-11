@@ -19,7 +19,6 @@ conn = openstack.connect(cloud="openstack")
 ##Crear un txt para guardar las salidas que nos interesan:
 
 ###
-os.system('sudo su')
 def menu():
     os.system('clear')
     print("ACTIVIDADES LABORATORIO WHITESTACK")
