@@ -32,8 +32,6 @@ def menu():
     print("5. Actividad 5")
     print("6. Actividad 6")
 
-
-
 while True:
     
     menu()
@@ -66,8 +64,6 @@ while True:
                    )
         print(res.text)
 
-
-
         # Listamos los flavors disponibles:
         f.write("Lista de flavors disponibles:\n")
         for flavor in conn.compute.flavors():
@@ -81,7 +77,6 @@ while True:
                              'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg'
                              },
                    )
-
         print(res.text)
         #####FIN ACTIVIDAD 1#####
         f.close()
@@ -107,7 +102,6 @@ while True:
                              'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg'
                              },
                   )
-
         print(res.text)
         #####FIN ACTIVIDAD 3#####
         break
@@ -124,20 +118,33 @@ while True:
                 }]
             }
         }
-
-
-        res = requests.post('http://192.168.56.101:8774/v2.1/servers',
-                            headers={'content-type': 'application/json',
-                                    'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg',
+        res = requests.post('http://192.168.0.80:8774/v2.1/servers', ###puerto 8774 es del servicio Compute
+                        headers={'content-type': 'application/json',
+                                'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg',
                                     },
                             data=json.dumps(payload)
                         )
-
         print(res.text)
 
 
         #crear máquina virtual vm-2, m1.tiny, net-2, cirros
-
+        payload= {
+                    "server": {
+                        "name": "vm-2",
+                        "imageRef": "80f3d2a3-704f-4c7c-8fde-fe636b6f2465",
+                        "flavorRef": "69355004-7010-45f9-9d7e-9cec723ee076",
+                        "networks": [{
+                            "uuid": "66d2d553-1a09-4be9-ad93-5f43c3a0e20d"
+                        }]
+                    }
+                }
+        res = requests.post('http://192.168.0.80:8774/v2.1/servers', ###puerto 8774 es del servicio Compute
+                                headers={'content-type': 'application/json',
+                                        'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg',
+                                            },
+                                    data=json.dumps(payload)
+                                )
+        print(res.text)
 
 
         #####FIN ACTIVIDAD 4#####

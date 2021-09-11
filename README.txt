@@ -25,3 +25,25 @@ Finalmente, la mayoría del código está comentado y estructurado de la forma m
 
 Best Regards,
 Royer Yangali Cáceres.
+
+
+
+
+#######################################CREDENCIALES WHITESTACK#######################################
+pod08:
+horizon:
+password: vC3kwt5Yhkd4rewtRFF365TbHT8TuYo1lFaTbH4x
+url: http://139.178.85.7:1008
+username: admin
+internal_ip: 192.168.0.80
+servers:
+rancher:
+Networks:
+PRIVATE:
+- 172.31.0.97
+- 10.10.8.252
+webterminal:
+password: 95f7104c40281877f436c0efc4c8cffa
+url: http://139.178.85.7:8080/remote
+username: pod08
+#######################################################################################################
