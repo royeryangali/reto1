@@ -112,7 +112,7 @@ while True:
             "server": {
                 "name": "vm-1",
                 "imageRef": "80f3d2a3-704f-4c7c-8fde-fe636b6f2465",
-                "flavorRef": "69355004-7010-45f9-9d7e-9cec723ee076",
+                "flavorRef": "http://192.168.0.80:8774/v2.1/flavors/m1.tiny",
                 "networks": [{
                     "uuid": "66d2d553-1a09-4be9-ad93-5f43c3a0e20d"
                 }]
@@ -132,7 +132,7 @@ while True:
                     "server": {
                         "name": "vm-2",
                         "imageRef": "80f3d2a3-704f-4c7c-8fde-fe636b6f2465",
-                        "flavorRef": "69355004-7010-45f9-9d7e-9cec723ee076",
+                        "flavorRef": "http://192.168.0.80:8774/v2.1/flavors/m1.tiny",
                         "networks": [{
                             "uuid": "66d2d553-1a09-4be9-ad93-5f43c3a0e20d"
                         }]
