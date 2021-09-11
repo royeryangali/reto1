@@ -158,7 +158,11 @@ while True:
                              'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg'
                              },
                   )
-        print(res3.text)
+        res4= requests.get("http://192.168.0.80:9696/v2.0/subnets", ###puerto 9696 es del servicio Network
+                     headers={'content-type': 'application/json',
+                             'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg'
+                             },
+                  )        
         #####FIN ACTIVIDAD 3#####
         break
     elif actividad=="4":
@@ -174,14 +178,12 @@ while True:
                 }]
             }
         }
-        res = requests.post('http://192.168.0.80:8774/v2.1/servers', ###puerto 8774 es del servicio Compute
+        res5 = requests.post('http://192.168.0.80:8774/v2.1/servers', ###puerto 8774 es del servicio Compute
                         headers={'content-type': 'application/json',
                                 'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg',
                                     },
                             data=json.dumps(payload)
-                        )
-        print(res.text)
-
+                        )      
 
         #crear máquina virtual vm-2, m1.tiny, net-2, cirros - POST
         payload= {
@@ -194,14 +196,12 @@ while True:
                         }]
                     }
                 }
-        res = requests.post('http://192.168.0.80:8774/v2.1/servers', ###puerto 8774 es del servicio Compute
+        res6 = requests.post('http://192.168.0.80:8774/v2.1/servers', ###puerto 8774 es del servicio Compute
                                 headers={'content-type': 'application/json',
                                         'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg',
                                             },
                                     data=json.dumps(payload)
-                                )
-        print(res.text)
-
+                                )       
 
         #####FIN ACTIVIDAD 4#####
         break
@@ -224,10 +224,15 @@ while True:
                                     },
                             data=json.dumps(payload)
                         )
-        print(res.text)
-        #asociar interfaz a subnet-1 PUT PUT /v2.0/routers/{router_id}/add_router_interface
+                #asociar interfaz a subnet-1 PUT PUT /v2.0/routers/{router_id}/add_router_interface
         
         #asociar otra interfaz a subnet-2 PUT PUT /v2.0/routers/{router_id}/add_router_interface
+        #listar routers GET
+        res3= requests.get("http://192.168.0.80:9696/v2.0/routers", ###puerto 9696 es del servicio Network
+                     headers={'content-type': 'application/json',
+                             'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg'
+                             },
+                  )
 
         #configurar gateway PUT
 
