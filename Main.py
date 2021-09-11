@@ -93,6 +93,23 @@ while True:
     elif actividad=="3":
         #####INICIO ACTIVIDAD 3#####
         #crear red privada net-1 - POST
+        payload= {
+            "network": {
+                "name": "net-1",
+                "": "",
+                "": "", 
+                "networks": [{
+                    "uuid": "66d2d553-1a09-4be9-ad93-5f43c3a0e20d"
+                }]
+            }
+        }
+        res = requests.post('http://192.168.0.80:9696/v2.0/networks', ###puerto 8774 es del servicio Compute
+                        headers={'content-type': 'application/json',
+                                'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg',
+                                    },
+                            data=json.dumps(payload)
+                        )
+        print(res.text)
 
         #crear red privada net-2 - POST
 
@@ -152,7 +169,23 @@ while True:
     elif actividad=="5":
         #####INICIO ACTIVIDAD 5#####
         #crear router POST
-
+        payload= {
+            "routers": {
+                "name": "router-1",
+                "": "",
+                "": "", 
+                "networks": [{
+                    "uuid": "66d2d553-1a09-4be9-ad93-5f43c3a0e20d"
+                }]
+            }
+        }
+        res = requests.post('http://192.168.0.80:9696/v2.0/routers', ###puerto 8774 es del servicio Compute
+                        headers={'content-type': 'application/json',
+                                'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg',
+                                    },
+                            data=json.dumps(payload)
+                        )
+        print(res.text)
         #asociar interfaz a subnet-1 POST
         
         #asociar otra interfaz a subnet-2 POST
