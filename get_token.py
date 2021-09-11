@@ -1,8 +1,7 @@
 import requests
 import json
 
-def obtener_Token():
-    payload = {
+payload = {
         "auth": {
             "identity": {
                 "methods": [
@@ -29,9 +28,9 @@ def obtener_Token():
     }
 
     ##solicitud POST para obtener un token y poder acceder a otros apis y poder ejecutar operaciones
-    res = requests.post('http://192.168.0.80:5000/v3/auth/tokens',
+res = requests.post('http://192.168.0.80:5000/v3/auth/tokens',
                         headers = {'content-type':'application/json'},
                         data=json.dumps(payload))
-    print(res.headers)
-    return print(res.headers)
+print(res.headers)
+    
     
