@@ -43,7 +43,8 @@ while True:
         for server in conn.compute.servers():            
             print(server.name)
             f.write("Name: "+ server.name)
-            f.write("  Hostname: " + server.hostname)            
+            f.write("  Hostname: " + server.hostname)
+            f.write("  Hostname: " + server.hypervisor_hostname)             
             f.write("\n")        
 
         # Listamos las imágenes disponibles:
