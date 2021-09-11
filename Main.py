@@ -40,26 +40,25 @@ while True:
         #####INICIO ACTIVIDAD 1#####
         # Listamos las instancias que están creadas:
         f.write("Lista de instancias creadas:\n")
-        for server in conn.compute.servers():
-            print(server.to_dict())
+        for server in conn.compute.servers():            
             print(server.name)
-            f.write(server.name + " | ")
-            f.write(server.hostname + " | ")
-
-        f.write("\n")
+            f.write("Name: "+ server.name + " | ")
+            f.write("Hostname: " + server.hostname + " | ")
+            f.write("Ram: " + server.ram + " | ")
+            f.write("\n")        
 
         # Listamos las imágenes disponibles:
         f.write("Lista de imágenes disponibles:\n")
         for image in conn.compute.images():
             print(image.name)
             f.write(image.name + " | ")
-        f.write("\n")
+            f.write("\n")
         # Listamos los flavors disponibles:
         f.write("Lista de flavors disponibles:\n")
         for flavor in conn.compute.flavors():
             print(flavor.name)
             f.write(flavor.name + " | ")
-        f.write("\n")
+            f.write("\n")
         #####FIN ACTIVIDAD 1#####
         f.close()
         break
