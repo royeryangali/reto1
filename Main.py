@@ -3,6 +3,8 @@ import os
 import sys
 import subprocess
 import openstack
+import requests
+import json
 from openstack import image
 from openstack.config import loader
 from openstack import connection
@@ -33,7 +35,7 @@ def menu():
 
 
 while True:
-    obtener_Token()
+    
     menu()
     actividad = input("Seleccione el número de actividad a elegir: ")
 
@@ -62,6 +64,13 @@ while True:
             print(flavor.name)
             f.write(flavor.name)
             f.write("\n")
+        res = requests.get('http://192.168.0.80:8774/v2.1/flavors', ###puerto 8774 es del servicio compute_legacy
+                    headers={'content-type': 'application/json',
+                             'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg'
+                             },
+                   )
+
+        print(res.text)
         #####FIN ACTIVIDAD 1#####
         f.close()
         break
@@ -76,10 +85,15 @@ while True:
         break
     elif actividad=="3":
         #####INICIO ACTIVIDAD 3#####
+        #crear red privada net-1
+        #crear red privada net-2
+        #listas redes creadas y subredes
         #####FIN ACTIVIDAD 3#####
         break
     elif actividad=="4":
         #####INICIO ACTIVIDAD 4#####
+        #crear máquina virtual vm-1, m1.tiny, net-1, cirros
+        #crear máquina virtual vm-2, m1.tiny, net-2, cirros
         #####FIN ACTIVIDAD 4#####
         break
     elif actividad=="5":
