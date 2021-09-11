@@ -40,7 +40,8 @@ while True:
         #####INICIO ACTIVIDAD 1#####
         # Listamos las instancias que están creadas:
         f.write("Lista de instancias creadas:\n")
-        for server in conn.compute.servers():            
+        for server in conn.compute.servers(): 
+            print(server.to_dict())           
             print(server.name)
             f.write("Name: "+ server.name)
             f.write("  Hostname: " + server.hostname)
