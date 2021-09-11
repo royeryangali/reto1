@@ -96,30 +96,69 @@ while True:
         payload= {
             "network": {
                 "name": "net-1",
-                "": "",
-                "": "", 
-                "networks": [{
-                    "uuid": "66d2d553-1a09-4be9-ad93-5f43c3a0e20d"
-                }]
+                "status":"active",                
+                "dhcp_enable": "true"                
             }
         }
-        res = requests.post('http://192.168.0.80:9696/v2.0/networks', ###puerto 8774 es del servicio Compute
+        res1 = requests.post('http://192.168.0.80:9696/v2.0/networks', ###puerto 8774 es del servicio Compute
                         headers={'content-type': 'application/json',
                                 'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg',
                                     },
                             data=json.dumps(payload)
                         )
-        print(res.text)
-
+        print(res1.text)
+        payload= {
+            "subnet": {
+                "name": "subnet-1",
+                "cidr":"192.168.1.0/24",
+                "gateway_ip": "192.168.1.1",
+                "enable_dhcp": "true"                
+            }
+        }
+        res2 = requests.post('http://192.168.0.80:9696/v2.0/subnets', ###puerto 8774 es del servicio Compute
+                        headers={'content-type': 'application/json',
+                                'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg',
+                                    },
+                            data=json.dumps(payload)
+                        )
+        print(res2.text)
         #crear red privada net-2 - POST
-
+        payload= {
+            "network": {
+                "name": "net-2",
+                "status":"active",                
+                "dhcp_enable": "true"                
+            }
+        }
+        res3 = requests.post('http://192.168.0.80:9696/v2.0/networks', ###puerto 8774 es del servicio Compute
+                        headers={'content-type': 'application/json',
+                                'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg',
+                                    },
+                            data=json.dumps(payload)
+                        )
+        print(res3.text)
+        payload= {
+            "subnet": {
+                "name": "subnet-2",
+                "cidr":"192.168.2.0/24",
+                "gateway_ip": "192.168.2.1",
+                "enable_dhcp": "true"                
+            }
+        }
+        res4 = requests.post('http://192.168.0.80:9696/v2.0/subnets', ###puerto 8774 es del servicio Compute
+                        headers={'content-type': 'application/json',
+                                'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg',
+                                    },
+                            data=json.dumps(payload)
+                        )
+        print(res4.text)
         #listas redes creadas y subredes GET
-        res= requests.get("http://192.168.0.80:9696/v2.0/networks", ###puerto 9696 es del servicio Network
+        res3= requests.get("http://192.168.0.80:9696/v2.0/networks", ###puerto 9696 es del servicio Network
                      headers={'content-type': 'application/json',
                              'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg'
                              },
                   )
-        print(res.text)
+        print(res3.text)
         #####FIN ACTIVIDAD 3#####
         break
     elif actividad=="4":
@@ -186,11 +225,11 @@ while True:
                             data=json.dumps(payload)
                         )
         print(res.text)
-        #asociar interfaz a subnet-1 POST
+        #asociar interfaz a subnet-1 PUT PUT /v2.0/routers/{router_id}/add_router_interface
         
-        #asociar otra interfaz a subnet-2 POST
+        #asociar otra interfaz a subnet-2 PUT PUT /v2.0/routers/{router_id}/add_router_interface
 
-        #configurar gateway POST
+        #configurar gateway PUT
 
         #####FIN ACTIVIDAD 5#####
         break
