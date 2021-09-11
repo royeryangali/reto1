@@ -56,7 +56,7 @@ while True:
             print(image.name)
             f.write(image.name)
             f.write("\n")
-        ###Método alternativo para mostrar datos más específicos de las imágenes en formato JSON GET
+        ###Método alternativo para mostrar datos más específicos de las imágenes en formato JSON - GET
         res = requests.get('http://192.168.0.80:9292/v2/images', ###puerto 9292 es del servicio Image
                     headers={'content-type': 'application/json',
                              'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg'
@@ -71,7 +71,7 @@ while True:
             f.write(flavor.name)
             f.write("\n")
 
-        ###Método alternativo para mostrar datos más específicos de flavors en formato JSON GET
+        ###Método alternativo para mostrar datos más específicos de flavors en formato JSON - GET
         res = requests.get('http://192.168.0.80:8774/v2.1/flavors', ###puerto 8774 es del servicio compute_legacy
                     headers={'content-type': 'application/json',
                              'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg'
@@ -92,9 +92,9 @@ while True:
         break
     elif actividad=="3":
         #####INICIO ACTIVIDAD 3#####
-        #crear red privada net-1 POST
+        #crear red privada net-1 - POST
 
-        #crear red privada net-2 POST
+        #crear red privada net-2 - POST
 
         #listas redes creadas y subredes GET
         res= requests.get("http://192.168.0.80:9696/v2.0/networks", ###puerto 9696 es del servicio Network
@@ -107,12 +107,12 @@ while True:
         break
     elif actividad=="4":
         #####INICIO ACTIVIDAD 4#####
-        #crear máquina virtual vm-1, m1.tiny, net-1, cirros
+        #crear máquina virtual vm-1, m1.tiny, net-1, cirros - POST
         payload= {
             "server": {
                 "name": "vm-1",
                 "imageRef": "80f3d2a3-704f-4c7c-8fde-fe636b6f2465",
-                "flavorRef": "http://192.168.0.80:8774/v2.1/flavors/m1.tiny",
+                "flavorRef": "m1.tiny", #http://192.168.0.80:8774/v2.1/flavors/m1.tiny
                 "networks": [{
                     "uuid": "66d2d553-1a09-4be9-ad93-5f43c3a0e20d"
                 }]
@@ -127,12 +127,12 @@ while True:
         print(res.text)
 
 
-        #crear máquina virtual vm-2, m1.tiny, net-2, cirros
+        #crear máquina virtual vm-2, m1.tiny, net-2, cirros - POST
         payload= {
                     "server": {
                         "name": "vm-2",
                         "imageRef": "80f3d2a3-704f-4c7c-8fde-fe636b6f2465",
-                        "flavorRef": "http://192.168.0.80:8774/v2.1/flavors/m1.tiny",
+                        "flavorRef": "m1.tiny", #http://192.168.0.80:8774/v2.1/flavors/m1.tiny
                         "networks": [{
                             "uuid": "66d2d553-1a09-4be9-ad93-5f43c3a0e20d"
                         }]
@@ -151,10 +151,19 @@ while True:
         break
     elif actividad=="5":
         #####INICIO ACTIVIDAD 5#####
+        #crear router POST
+
+        #asociar interfaz a subnet-1 POST
+        
+        #asociar otra interfaz a subnet-2 POST
+
+        #configurar gateway POST
+
         #####FIN ACTIVIDAD 5#####
         break
     elif actividad=="6":
         #####INICIO ACTIVIDAD 6#####
+        #SSH
         #####FIN ACTIVIDAD 6#####
         break
     else:
