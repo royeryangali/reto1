@@ -61,6 +61,7 @@ while True:
         f.write("\n")
         #####FIN ACTIVIDAD 1#####
         f.close()
+        break
 
     elif actividad=="2":
         g = open("2OutputAct.txt","w")
