@@ -33,7 +33,7 @@ def menu():
 
 
 while True:
-    tokenHallado = obtener_Token()
+    obtener_Token()
     menu()
     actividad = input("Seleccione el número de actividad a elegir: ")
 
