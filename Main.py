@@ -17,47 +17,60 @@ conn = openstack.connect(cloud="openstack")
 ##########################################################FIN INICIALIZACIÓN#########################################
 
 ##Crear un txt para guardar las salidas que nos interesan:
-f = open("OutputRoyer.txt","w")
+
 ###
+def menu():
+    os.system('clear')
+    print("ACTIVIDADES LABORATORIO WHITESTACK")
+    print("1. Actividad 1")
+    print("2. Actividad 2")
+    print("3. Actividad 3")
+    print("4. Actividad 4")
+    print("5. Actividad 5")
+    print("6. Actividad 6")
 
-print("ACTIVIDADES LABORATORIO WHITESTACK")
-print("1.\n")
-print("2.\n")
-print("3.\n")
-print("4.\n")
-print("5.\n")
-print("6.\n")
 
-actividad = int(input("Seleccione el número de actividad a elegir: "))
 
-#####INICIO ACTIVIDAD 1#####
-# Listamos las instancias que están creadas:
-f.write("Lista de instancias creadas:\n")
-for server in conn.compute.servers():
-    print(server.name)
-    f.write(server.name + " | ")
+while True:
+    menu()
+    actividad = input("Seleccione el número de actividad a elegir: ")
 
-f.write("\n")
+    if actividad=="1":
+        f = open("1OutputAct.txt","w")
+        #####INICIO ACTIVIDAD 1#####
+        # Listamos las instancias que están creadas:
+        f.write("Lista de instancias creadas:\n")
+        for server in conn.compute.servers():
+            print(server.name)
+        f.write(server.name + " | ")
 
-# Listamos las imágenes disponibles:
-f.write("Lista de imágenes disponibles:\n")
-for image in conn.compute.images():
-    print(image.name)
-    f.write(image.name + " | ")
-f.write("\n")
+        f.write("\n")
 
-# Listamos los flavors disponibles:
-f.write("Lista de flavors disponibles:\n")
-for flavor in conn.compute.flavors():
-    print(flavor.name)
-    f.write(flavor.name + " | ")
-f.write("\n")
-#####FIN ACTIVIDAD 1#####
+        # Listamos las imágenes disponibles:
+        f.write("Lista de imágenes disponibles:\n")
+        for image in conn.compute.images():
+            print(image.name)
+        f.write(image.name + " | ")
+        f.write("\n")
 
-#####INICIO ACTIVIDAD 2#####
-subprocess.call('sudo source /etc/whitecloud/admin-openrc.sh')
-#####FIN ACTIVIDAD 2#####
-f.write("Credenciales de admin cargadas.\n")
+        # Listamos los flavors disponibles:
+        f.write("Lista de flavors disponibles:\n")
+        for flavor in conn.compute.flavors():
+            print(flavor.name)
+        f.write(flavor.name + " | ")
+        f.write("\n")
+        #####FIN ACTIVIDAD 1#####
+        f.close()
+
+    elif actividad=="2":
+        g = open("2OutputAct.txt","w")
+        #####INICIO ACTIVIDAD 2#####
+        os.system('sudo source /etc/whitecloud/admin-openrc.sh')
+        #####FIN ACTIVIDAD 2#####
+        g.write("Credenciales de admin cargadas.\n")
+        g.close()
+
+   
 
 #####INICIO ACTIVIDAD 3#####
 #####FIN ACTIVIDAD 3#####
@@ -71,4 +84,3 @@ f.write("Credenciales de admin cargadas.\n")
 #####INICIO ACTIVIDAD 6#####
 #####FIN ACTIVIDAD 6#####
 
-f.close()
