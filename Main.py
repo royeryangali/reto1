@@ -7,6 +7,7 @@ from openstack import image
 from openstack.config import loader
 from openstack import connection
 from subprocess import call
+import get_token 
 
 ##########################################################INICIALIZACIÓN#########################################
 # Para tener los logs en el archivo "LogsDeOpenStack"
@@ -32,6 +33,7 @@ def menu():
 
 
 while True:
+    get_token()
     menu()
     actividad = input("Seleccione el número de actividad a elegir: ")
 
@@ -66,8 +68,7 @@ while True:
 
     elif actividad=="2":
         g = open("2OutputAct.txt","w")
-        #####INICIO ACTIVIDAD 2#####
-        os.system('source /etc/whitecloud/admin-openrc.sh')
+        #####INICIO ACTIVIDAD 2#####        
         os.system('openstack server list')        
         #####FIN ACTIVIDAD 2#####
         g.write("Credenciales de admin cargadas.\n")

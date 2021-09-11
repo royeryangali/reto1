@@ -27,7 +27,7 @@ payload = {
     }
 }
 
-##solicitud POST para obtener un token y poder acceder a otros apis
+##solicitud POST para obtener un token y poder acceder a otros apis y poder ejecutar operaciones
 res = requests.post('http://192.168.0.80:5000/v3/auth/tokens',
                     headers = {'content-type':'application/json'},
                     data=json.dumps(payload))
