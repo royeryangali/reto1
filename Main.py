@@ -100,7 +100,7 @@ while True:
                 "dhcp_enable": "true"                
             }
         }
-        res1 = requests.post('http://192.168.0.80:9696/v2.0/networks', ###puerto 8774 es del servicio Compute
+        res1 = requests.post('http://192.168.0.80:9696/v2.0/networks', ###puerto 9696 es del servicio Network
                         headers={'content-type': 'application/json',
                                 'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg',
                                     },
@@ -115,7 +115,7 @@ while True:
                 "enable_dhcp": "true"                
             }
         }
-        res2 = requests.post('http://192.168.0.80:9696/v2.0/subnets', ###puerto 8774 es del servicio Compute
+        res2 = requests.post('http://192.168.0.80:9696/v2.0/subnets', ####puerto 9696 es del servicio Network
                         headers={'content-type': 'application/json',
                                 'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg',
                                     },
@@ -130,7 +130,7 @@ while True:
                 "dhcp_enable": "true"                
             }
         }
-        res3 = requests.post('http://192.168.0.80:9696/v2.0/networks', ###puerto 8774 es del servicio Compute
+        res3 = requests.post('http://192.168.0.80:9696/v2.0/networks',###puerto 9696 es del servicio Network
                         headers={'content-type': 'application/json',
                                 'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg',
                                     },
@@ -145,7 +145,7 @@ while True:
                 "enable_dhcp": "true"                
             }
         }
-        res4 = requests.post('http://192.168.0.80:9696/v2.0/subnets', ###puerto 8774 es del servicio Compute
+        res4 = requests.post('http://192.168.0.80:9696/v2.0/subnets', ###puerto 9696 es del servicio Network
                         headers={'content-type': 'application/json',
                                 'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg',
                                     },
