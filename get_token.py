@@ -32,7 +32,7 @@ def obtener_Token():
     res = requests.post('http://192.168.0.80:5000/v3/auth/tokens',
                         headers = {'content-type':'application/json'},
                         data=json.dumps(payload))
-    h = open("tokenParaPrueba.txt","w")
-    h.write(res.headers)
-    h.close()
+    with open ('personal.json','w') as json_file:
+            json.dump(res.headers,json_file)
+            
     return print(res.headers)
