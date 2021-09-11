@@ -38,4 +38,5 @@ print(res.headers) ###Parámetro X-Subject-Token es el que tiene el token, lo id
 ###Una alternativa es la de ejecutar este script "get_token.py" para luego obtener el token del output y manualmente copiarlo y pegarlo en las solicitudes GET y POST
 ##que se realizan en el script "Main.py"
     
-    
+json_data=json.load(res.headers)    
+print (json_data)
