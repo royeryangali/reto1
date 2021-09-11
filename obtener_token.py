@@ -40,7 +40,7 @@ print(res.headers) ###Parámetro X-Subject-Token es el que tiene el token, lo id
     
 #json_data=json.load(res.headers)    
 #print (json_data)
-res = requests.get('http://192.168.0.80:8774/v2.1/flavors', ###puerto 8774 es del servicio compute_legacy
+res = requests.get('http://192.168.0.80:9292/v2/images', ###puerto 9292 es del servicio Image
                     headers={'content-type': 'application/json',
                              'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg'
                              },
