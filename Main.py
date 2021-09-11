@@ -114,7 +114,32 @@ while True:
     elif actividad=="4":
         #####INICIO ACTIVIDAD 4#####
         #crear máquina virtual vm-1, m1.tiny, net-1, cirros
+        payload= {
+            "server": {
+                "name": "vm-1",
+                "imageRef": "80f3d2a3-704f-4c7c-8fde-fe636b6f2465",
+                "flavorRef": "69355004-7010-45f9-9d7e-9cec723ee076",
+                "networks": [{
+                    "uuid": "66d2d553-1a09-4be9-ad93-5f43c3a0e20d"
+                }]
+            }
+        }
+
+
+        res = requests.post('http://192.168.56.101:8774/v2.1/servers',
+                            headers={'content-type': 'application/json',
+                                    'X-Auth-Token': 'gAAAAABhPBVrrysv85HCLKQ4sf96bQSF0T9ZXHGWk_ZRqoG9M0z74maF9QaG0i8i0MBrqX6At9JnsuICbA426zAZn3tpqZpWdUD_DFg_cs0HYVjDkgc3Dnph9-ILE8criDXu7Lwmb4m9Qfe_eIKU8pzaNgK3t8fEIIL_cH8Oev63PTejXBrnCQg',
+                                    },
+                            data=json.dumps(payload)
+                        )
+
+        print(res.text)
+
+
         #crear máquina virtual vm-2, m1.tiny, net-2, cirros
+
+
+
         #####FIN ACTIVIDAD 4#####
         break
     elif actividad=="5":
