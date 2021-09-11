@@ -20,6 +20,7 @@ conn = openstack.connect(cloud="openstack")
 
 ###
 def menu():
+    os.system('sudo su')
     os.system('clear')
     print("ACTIVIDADES LABORATORIO WHITESTACK")
     print("1. Actividad 1")
@@ -65,7 +66,7 @@ while True:
     elif actividad=="2":
         g = open("2OutputAct.txt","w")
         #####INICIO ACTIVIDAD 2#####
-        os.system('sudo source /etc/whitecloud/admin-openrc.sh')
+        os.system('source /etc/whitecloud/admin-openrc.sh')
         #####FIN ACTIVIDAD 2#####
         g.write("Credenciales de admin cargadas.\n")
         g.close()
