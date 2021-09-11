@@ -92,7 +92,7 @@ while True:
         break
     elif actividad=="3":
         #####INICIO ACTIVIDAD 3#####
-        #crear red privada net-1 - POST
+        #crear red privada net-1 y subred subnet-1 - POST
         payload= {
             "network": {
                 "name": "net-1",
@@ -122,7 +122,7 @@ while True:
                             data=json.dumps(payload)
                         )
         print(res2.text)
-        #crear red privada net-2 - POST
+        #crear red privada net-2 y subnet-2 - POST
         payload= {
             "network": {
                 "name": "net-2",
@@ -211,11 +211,10 @@ while True:
         payload= {
             "routers": {
                 "name": "router-1",
-                "": "",
-                "": "", 
-                "networks": [{
-                    "uuid": "66d2d553-1a09-4be9-ad93-5f43c3a0e20d"
-                }]
+                "id":"1",
+                "admin_state_up":"true",
+                "status":"ACTIVE",
+                "external_gateway_info":"PUBLIC"
             }
         }
         res = requests.post('http://192.168.0.80:9696/v2.0/routers', ###puerto 8774 es del servicio Compute
@@ -224,9 +223,10 @@ while True:
                                     },
                             data=json.dumps(payload)
                         )
-                #asociar interfaz a subnet-1 PUT PUT /v2.0/routers/{router_id}/add_router_interface
+        #asociar interfaz a subnet-1 PUT PUT /v2.0/routers/{router_id}/add_router_interface
         
         #asociar otra interfaz a subnet-2 PUT PUT /v2.0/routers/{router_id}/add_router_interface
+        
         #listar routers GET
         res3= requests.get("http://192.168.0.80:9696/v2.0/routers", ###puerto 9696 es del servicio Network
                      headers={'content-type': 'application/json',
