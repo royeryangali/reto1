@@ -66,6 +66,7 @@ while True:
         g = open("2OutputAct.txt","w")
         #####INICIO ACTIVIDAD 2#####
         os.system('source /etc/whitecloud/admin-openrc.sh')
+        os.system('openstack server list')        
         #####FIN ACTIVIDAD 2#####
         g.write("Credenciales de admin cargadas.\n")
         g.close()
