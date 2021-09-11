@@ -69,18 +69,33 @@ while True:
         #####FIN ACTIVIDAD 2#####
         g.write("Credenciales de admin cargadas.\n")
         g.close()
-
+        break
+    elif actividad=="3":
+        #####INICIO ACTIVIDAD 3#####
+        #####FIN ACTIVIDAD 3#####
+        break
+    elif actividad=="4":
+        #####INICIO ACTIVIDAD 4#####
+        #####FIN ACTIVIDAD 4#####
+        break
+    elif actividad=="5":
+        #####INICIO ACTIVIDAD 5#####
+        #####FIN ACTIVIDAD 5#####
+        break
+    elif actividad=="6":
+        #####INICIO ACTIVIDAD 6#####
+        #####FIN ACTIVIDAD 6#####
+        break
+    else:
+        print ("No haz seleccionado una opción disponible, finalizando programa.")
+        break
    
 
-#####INICIO ACTIVIDAD 3#####
-#####FIN ACTIVIDAD 3#####
 
-#####INICIO ACTIVIDAD 4#####
-#####FIN ACTIVIDAD 4#####
 
-#####INICIO ACTIVIDAD 5#####
-#####FIN ACTIVIDAD 5#####
 
-#####INICIO ACTIVIDAD 6#####
-#####FIN ACTIVIDAD 6#####
+
+
+
+
 
